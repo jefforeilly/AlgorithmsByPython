@@ -20,21 +20,14 @@ print(ChangeMaking([1, 5, 10, 25], 63))
 输入2，输出1；输入5，输出2
 也是使用动态规划
 '''
-import sys
-try:
-    while True:
-        line = sys.stdin.readline().strip()
-        if line == '':
-            break
-        target = int(line)
-        coinVal = [1, 5, 10, 20, 50, 100]
-        alist = [0]*(target+1)
-        alist[0] = 1
-        for i in range(6):
-            j = coinVal[i]
-            while j <= target:
-                alist[j] = alist[j] + alist[j-coinVal[i]]
-                j += 1
-        print(alist[-1])
-except:
-    pass
+target = 6
+coinVal = [1, 5, 10, 20, 50, 100]
+alist = [0]*(target+1)
+alist[0] = 1
+for i in range(6):
+    j = coinVal[i]
+    while j <= target:
+        alist[j] += alist[j - coinVal[i]]
+        j += 1
+    print(coinVal[i], alist)
+print(alist[-1])

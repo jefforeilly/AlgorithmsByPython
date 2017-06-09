@@ -1,11 +1,11 @@
 # 构建二叉查找树(非平衡)
 class TreeNode:
-    def __init__(self, key, val, left = None, right = None, parent = None):
+    def __init__(self, key, val, left=None, right=None, parent=None):
         self.key = key
         self.payload = val
         self.leftChild = left
         self.rightChild = right
-        self.parent= parent
+        self.parent = parent
 
     def hasLeftChild(self):
         return self.leftChild
@@ -40,6 +40,7 @@ class TreeNode:
             self.leftChild.parent = self
         if self.hasRightChild():
             self.rightChild.parent = self
+
 
 class BinarySearchTree:
     def __init__(self):
@@ -202,12 +203,11 @@ class BinarySearchTree:
                                                 currentNode.rightChild.rightChild)
 
 
-
 mytree = BinarySearchTree()
-mytree[3]="red"
-mytree[4]="blue"
-mytree[6]="yellow"
-mytree[2]="at"
+mytree[3] = "red"
+mytree[4] = "blue"
+mytree[6] = "yellow"
+mytree[2] = "at"
 
 print(mytree[6])
 print(mytree[2])
